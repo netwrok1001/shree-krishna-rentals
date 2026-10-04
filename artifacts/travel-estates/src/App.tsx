@@ -31,7 +31,7 @@ function App() {
   const [modal,setModal] = useState<Listing|null>(null);
   const [mobileMenu,setMobileMenu] = useState(false);
   const [submitted,setSubmitted] = useState(false);
-  useEffect(()=>{document.title='Wayfare & Homes — Go well. Feel at home.'; const description=document.querySelector('meta[name="description"]')??document.createElement('meta');description.setAttribute('name','description');description.setAttribute('content','Find long-term homes to rent or buy, and private chauffeur journeys with Wayfare & Homes.');if(!description.parentNode)document.head.appendChild(description);},[]);
+  useEffect(()=>{document.title='Shree Krishna Real Estate and Car Rentals'; const description=document.querySelector('meta[name="description"]')??document.createElement('meta');description.setAttribute('name','description');description.setAttribute('content','Find homes to rent or buy and book chauffeur-driven cars for tours and travel with Shree Krishna Real Estate and Car Rentals.');if(!description.parentNode)document.head.appendChild(description);},[]);
   const isRide=mode==='Ride';
   const data = isRide ? rides : homes.filter(h => mode==='Rent' ? h.detail==='/ month' : h.detail==='for sale');
   const filtered=useMemo(()=>data.filter(item=>{
@@ -52,9 +52,9 @@ function App() {
   return <main className="min-h-[100dvh] bg-[#f5f2eb] text-[#263b34]">
     <div className="mx-auto max-w-[1440px] px-5 md:px-10">
       <header className="flex items-center justify-between py-5 md:py-6">
-        <a href="/" className="flex items-center gap-3 no-underline text-[#263b34]" aria-label="Wayfare and Homes home">
+        <a href="/" className="flex items-center gap-3 no-underline text-[#263b34]" aria-label="Shree Krishna Real Estate and Car Rentals home">
           <span className="grid h-10 w-10 place-items-center rounded-full bg-[#28483d] text-[#f8f4e9]"><Compass size={21}/></span>
-          <span className="leading-none"><span className="serif block text-[20px] font-semibold tracking-[-.04em]">Wayfare <span className="text-[#c8795d]">&</span> Homes</span><span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-[.23em] text-[#7c8378]">Go well. Feel at home.</span></span>
+          <span className="leading-none"><span className="serif block text-[19px] font-semibold tracking-[-.04em]">Shree Krishna</span><span className="mt-1.5 block text-[8px] font-semibold uppercase tracking-[.13em] text-[#7c8378]">Real Estate and Car Rentals</span></span>
         </a>
         <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#59665e] md:flex">
           <a href="#discover" onClick={()=>setMode('Ride')} className="hover:text-[#28483d]">Chauffeur journeys</a><a href="#discover" onClick={()=>setMode('Rent')} className="hover:text-[#28483d]">Rent a home</a><a href="#how-it-works" className="hover:text-[#28483d]">How it works</a>
@@ -129,7 +129,7 @@ function App() {
         <div className="px-7 py-9 md:px-12 md:py-12"><div className="mb-3 text-[10px] font-bold uppercase tracking-[.18em] text-[#a96349]">One good thing leads to another</div><h2 className="serif max-w-lg text-[34px] leading-[1.13] tracking-[-.03em] md:text-[41px]">The journey is part of feeling at home.</h2><p className="mt-4 max-w-lg text-[13px] leading-7 text-[#69756d]">Meet a local driver who knows the scenic way. Find a home that feels like it has always been there. Make the in-between feel like part of the trip.</p><button onClick={()=>{setMode('Ride');document.getElementById('discover')?.scrollIntoView({behavior:'smooth'})}} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#28483d] px-5 py-3 text-[12px] font-semibold text-white">Explore a journey <ArrowUpRight size={14}/></button></div>
         <div className="relative min-h-[240px] overflow-hidden md:min-h-[320px]"><img src="/hero-wayfare.jpg" alt="Quiet road through the Portuguese coast" className="absolute inset-0 h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-r from-[#e9e7db]/30 to-transparent"/><div className="absolute bottom-5 right-5 rounded-2xl bg-[#f7f4eb]/90 px-4 py-3"><div className="text-[9px] font-bold uppercase tracking-[.16em] text-[#798178]">Local note</div><div className="serif mt-1 text-[15px]">The best part is often the detour.</div></div></div>
       </section>
-      <footer className="flex flex-col gap-3 border-t border-[#dedbd0] py-7 text-[11px] text-[#788078] sm:flex-row sm:items-center sm:justify-between"><div className="flex items-center gap-2"><Compass size={15} className="text-[#42604e]"/>© 2025 Wayfare & Homes</div><span>Independent journeys. Thoughtful places. A little more considered.</span><span className="rounded-full bg-[#e9e7db] px-3 py-1.5 text-[10px] font-semibold text-[#647268]">DEMO · Enquiries are not sent to a real business</span></footer>
+      <footer className="flex flex-col gap-3 border-t border-[#dedbd0] py-7 text-[11px] text-[#788078] sm:flex-row sm:items-center sm:justify-between"><div className="flex items-center gap-2"><Compass size={15} className="text-[#42604e]"/>© 2026 Shree Krishna Real Estate and Car Rentals</div><span>Independent journeys. Thoughtful places. A little more considered.</span><span className="rounded-full bg-[#e9e7db] px-3 py-1.5 text-[10px] font-semibold text-[#647268]">DEMO · Enquiries are not sent to a real business</span></footer>
     </div>
     {modal&&<div className="fixed inset-0 z-50 flex items-end justify-center bg-[#162720]/55 p-0 backdrop-blur-[2px] sm:items-center sm:p-5" role="dialog" aria-modal="true" aria-labelledby="inquiry-title" onMouseDown={e=>{if(e.target===e.currentTarget)closeModal()}}>
       <div className="relative max-h-[94dvh] w-full max-w-[510px] overflow-auto rounded-t-[24px] bg-[#fbfaf6] shadow-2xl sm:rounded-[24px]">
